@@ -39,10 +39,12 @@ class Home extends CI_Controller{
 		$data = array('FirstName' => $post['FirstName'],
 					 'LastName' => $post['LastName'],
 					  'Username' => $post['UserName'],
-					  'Password' => $post['Password'],
+					  'Age' => $post['Age'],
+					  'EmploymentDate' => $post['EmploymentDate'],
+					  'JoiningDate' => date("Y-m-d")
 					  );
 		
-		$data = $this->input->post();
+		
 		$this->profileModel->addProfile($data);
 		
 	}

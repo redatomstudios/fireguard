@@ -6,7 +6,7 @@
 
 <p>Password: <input type="password" name="Password" id="Password" /></p>
 <p>Confirm Password: <input type="password" name="ConfirmPassword" id="ConfirmPassword" /></p>
-<p>Joining Date: <input type="text" name="JoiningDate" id="JoiningDate" /></p>
+<p>Employment Date: <input type="text" name="EmploymentDate" id="EmploymentDate" /></p>
 <p>Age: <input type="text" name="Age" id="Age" /></p>
 
 <!-- Image upload -->
