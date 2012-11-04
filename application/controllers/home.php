@@ -31,8 +31,8 @@ class Home extends CI_Controller{
 	
 	public function signup(){
 		
-		$this->load->model("profileModel");
-		
+		$this->load->model("userModel");
+		$this->load->helper('string');
 		
 		$post = $this->input->post();
 		
@@ -41,11 +41,12 @@ class Home extends CI_Controller{
 					  'Username' => $post['UserName'],
 					  'Age' => $post['Age'],
 					  'EmploymentDate' => $post['EmploymentDate'],
-					  'JoiningDate' => date("Y-m-d")
+					  'PhoneNumber' => $post['Phone'],
+					  'Password' => $post['Password']
 					  );
 		
 		
-		$this->profileModel->addProfile($data);
+		$this->userModel->createUser($data);
 		
 	}
 	
