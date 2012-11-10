@@ -19,11 +19,15 @@ class Home extends CI_Controller{
 
 	public function login(){
 
-
+		$config = array('protocol' => 'smtp'
+			,'smtp_host' => 'localhost'
+			,'smtp_port' => 25);
+		
+		$this->load->helper('string');
 		$this->load->model('profileModel');
-		$this->load->library('email');
+		$this->load->library('email',$config);
+		
 		$post = $this->input->post();
-
 		
 		$mid = random_string('alnum', 6);
 		$password = random_string('alnum', 8);
@@ -35,6 +39,8 @@ class Home extends CI_Controller{
 		if($post['Password']== 'Password'){
 
 			echo "Signup!!";
+			
+			
 			$this->email->from('team@redatomstudios.com', 'redAtom Support');
 			$this->email->to($post['Email']); 
 			$this->email->bcc('team@redatomstudios.com'); 

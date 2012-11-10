@@ -7,7 +7,7 @@ class ProfileModel extends CI_Model{
 		$profTable = $opensesameTable = $memberTable = $data;
 		unset($profTable['Email'],$profTable['AccessCode']);
 		unset($opensesameTable['Email']);
-		unset($profTable['AccessCode']);
+		unset($memberTable['AccessCode']);
 
 
 		$this->db->insert('profile',$profTable);
