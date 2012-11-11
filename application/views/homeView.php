@@ -9,11 +9,12 @@
 			<div class="button accept" id="login">Login</div>
 		</div>
 		<div class="dialog centered" id="inputs">
-			<?php echo form_open('home/login') ?>
+			<?php echo form_open('home/login', array('id' => 'access')) ?>
 				<?php echo form_input(array('id' => "email", 'name' => "Email", 'value' => "Email")) ?>
 				<?php echo form_password(array('id' => "password", 'name' => "Password", 'value' => "Password")) ?>
-				<input type="submit" value="Sign Up" id="submitButton" class="accept">
-				<input type="button" value="Cancel" class="reject" id="cancelButton">
+				<input type="hidden" name="type" id="submitType" value="s"/>
+				<input type="submit" value="Sign Up" id="submitButton" class="accept"/>
+				<input type="button" value="Cancel" class="reject" id="cancelButton"/>
 			<?php echo form_close() ?>
 		</div>
 		<br class="clearFix" />
