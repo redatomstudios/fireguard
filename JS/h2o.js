@@ -2,8 +2,8 @@
 /* Created by redAtom Studios @ 2012 */
 
 jQuery(document).ready(function($){
-
-	//var banana = new RegExp("\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b", "g");
+	var alert_id = 0;
+	var notify_delay = 3000;
 	var emailRegex = /\S+@\S+\.\S+/;
 
 	if(document.getElementById('email').value != 'Email') {
@@ -49,16 +49,37 @@ jQuery(document).ready(function($){
 		e.preventDefault();
 		var errorMessages = [];
 		if(!emailRegex.test(document.getElementById('email').value)) {
-			errorMessages.push('Please enter a valid email address.');
+			errorMessages.push(['Please enter a valid email address.', 0]);
 		}
 		if(document.getElementById('submitType').value == 'l') {
 			if(document.getElementById('password').value.length <= 5)
-				errorMessages.push('Password is too short.');
+				errorMessages.push(['Password is too short.', 0]);
 		}
 		if(errorMessages.length == 0) {
 			this.submit();
 		} else {
-			console.log(errorMessages);
+			$.each(errorMessages, function(index, value){
+				openNotification(value[0], value[1]);
+			})
 		}
-	})
+	});
+
+	// Notification scriptlet?!?! Sets up the notifier on each page and handles notifications...like a boss. :D
+	$('body').append('<div id="notifier"></div>')
+
+	var openNotification = function(message, type) {
+		if(message) {
+			$('div#notifier').append('<div id="m'+alert_id+'" class="'+(type ? 'notification' : 'alert')+'">'+message+'</div>')
+			var this_id = '#m' + alert_id++;
+			$(this_id).animate({height: 2+'em'}, function(){
+				setTimeout(function(){
+					$(this_id).queue('fx', []).animate({height: 0}, function(){
+						$(this).hide().remove();
+					});
+				}, notify_delay);
+			});
+		}
+	}
+
+	openNotification();
 });
