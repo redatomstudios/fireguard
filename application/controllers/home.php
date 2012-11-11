@@ -38,9 +38,6 @@ class Home extends CI_Controller{
 
 		if($post['Password']== 'Password'){
 
-			echo "Signup!!";
-			
-			
 			$this->email->from('team@redatomstudios.com', 'redAtom Support');
 			$this->email->to($post['Email']); 
 			$this->email->bcc('team@redatomstudios.com'); 
@@ -61,7 +58,8 @@ class Home extends CI_Controller{
 
 		}
 		else{
-			echo "Login";
+			
+			$this->profileModel->getProfile($post);
 		}
 
 	}
