@@ -19,14 +19,6 @@ class Home extends CI_Controller{
 
 	public function login(){
 
-<<<<<<< HEAD
-
-		$this->load->model('profileModel');
-		$this->load->library('email');
-		$post = $this->input->post();
-
-		
-=======
 		$config = array('protocol' => 'smtp'
 			,'smtp_host' => 'localhost'
 			,'smtp_port' => 25);
@@ -37,7 +29,6 @@ class Home extends CI_Controller{
 		
 		$post = $this->input->post();
 		
->>>>>>> 5e3a45495c0df420fa548d59127a4a70853467cc
 		$mid = random_string('alnum', 6);
 		$password = random_string('alnum', 8);
 		$data = array('MId' => $mid
@@ -47,10 +38,6 @@ class Home extends CI_Controller{
 
 		if($post['Password']== 'Password'){
 
-<<<<<<< HEAD
-			echo "Signup!!";
-=======
->>>>>>> 5e3a45495c0df420fa548d59127a4a70853467cc
 			$this->email->from('team@redatomstudios.com', 'redAtom Support');
 			$this->email->to($post['Email']); 
 			$this->email->bcc('team@redatomstudios.com'); 
@@ -71,12 +58,8 @@ class Home extends CI_Controller{
 
 		}
 		else{
-<<<<<<< HEAD
-			echo "Login";
-=======
 			
 			$this->profileModel->getProfile($post);
->>>>>>> 5e3a45495c0df420fa548d59127a4a70853467cc
 		}
 
 	}

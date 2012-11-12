@@ -2,8 +2,6 @@
 /* Created by redAtom Studios @ 2012 */
 
 jQuery(document).ready(function($){
-<<<<<<< HEAD
-=======
 	var alert_id = 0;
 	var notify_delay = 3000;
 	var emailRegex = /\S+@\S+\.\S+/;
@@ -12,7 +10,6 @@ jQuery(document).ready(function($){
 		document.getElementById('email').value = 'Email';
 	}
 
->>>>>>> 5e3a45495c0df420fa548d59127a4a70853467cc
 	$('input[type="text"], input[type="password"]').focus(function(){
 		var cElement = $(this)[0];
 		if(cElement.value.toLowerCase() == "email" || cElement.value.toLowerCase() == "password") {
@@ -31,10 +28,7 @@ jQuery(document).ready(function($){
 		$('#splashButtons').hide();
 		$('#password').hide();
 		document.getElementById('submitButton').value = 'Sign Up';
-<<<<<<< HEAD
-=======
 		document.getElementById('submitType').value = 's';
->>>>>>> 5e3a45495c0df420fa548d59127a4a70853467cc
 		$('#inputs').show();
 	});
 
@@ -42,10 +36,7 @@ jQuery(document).ready(function($){
 		$('#splashButtons').hide();
 		$('#password').show();
 		document.getElementById('submitButton').value = 'Login';
-<<<<<<< HEAD
-=======
 		document.getElementById('submitType').value = 'l';
->>>>>>> 5e3a45495c0df420fa548d59127a4a70853467cc
 		$('#inputs').show();
 	});
 
@@ -53,8 +44,6 @@ jQuery(document).ready(function($){
 		$('#inputs').hide();
 		$('#splashButtons').show();
 	});
-<<<<<<< HEAD
-=======
 
 	$('form#access').submit(function(e) {
 		e.preventDefault();
@@ -93,5 +82,4 @@ jQuery(document).ready(function($){
 	}
 
 	openNotification();
->>>>>>> 5e3a45495c0df420fa548d59127a4a70853467cc
 });

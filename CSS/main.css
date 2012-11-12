@@ -1,8 +1,6 @@
 /* CSS Document */
 /* Created by redAtom Studios @ 2012 */
 
-<<<<<<< HEAD
-=======
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -52,7 +50,6 @@ table {
 	border-spacing: 0;
 }
 
->>>>>>> 5e3a45495c0df420fa548d59127a4a70853467cc
 html {
 	background: url('../Media/Graphics/BG_Noise.jpg');
 }
@@ -165,8 +162,6 @@ input[type="submit"], input[type="button"] {
 
 input[type="submit"]:hover, input[type="button"]:hover {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-<<<<<<< HEAD
-=======
 }
 
 div#notifier {
@@ -197,5 +192,4 @@ div.alert {
 
 div.notification:hover, div.alert:hover {
 	opacity: 0.9;
->>>>>>> 5e3a45495c0df420fa548d59127a4a70853467cc
 }
