@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Nov 11, 2012 at 08:42 AM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Host: 127.0.0.1
+-- Generation Time: Nov 12, 2012 at 09:02 AM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `LastName` varchar(50) NOT NULL,
   `PhoneNumber` int(12) NOT NULL,
   `Email` varchar(100) NOT NULL,
-  `Type` enum('Station','Squad','Member') NOT NULL,
+  `Type` enum('Station','Squad','Member','Default') NOT NULL DEFAULT 'Default',
   PRIMARY KEY (`Id`),
   UNIQUE KEY `MId` (`MId`),
   UNIQUE KEY `Email` (`Email`)
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `member` (
 --
 
 INSERT INTO `member` (`Id`, `MId`, `FirstName`, `LastName`, `PhoneNumber`, `Email`, `Type`) VALUES
-(1, 'Q3GVXs', '', '', 0, 'admin@localhost', 'Station');
+(1, 'usCDjz', '', '', 0, 'albin@gmail.com', 'Default');
 
 -- --------------------------------------------------------
 
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `opensesame` (
 --
 
 INSERT INTO `opensesame` (`Id`, `MId`, `AccessCode`) VALUES
-(1, 'Q3GVXs', 'a1769e88fb73465b284139add2b0b9c1488c6b61');
+(1, 'usCDjz', '6df89f6ca3ed1f5d174cede62dc0a95d9f653ef4');
 
 -- --------------------------------------------------------
 
@@ -86,15 +86,14 @@ CREATE TABLE IF NOT EXISTS `profile` (
   `ProfileImage` varchar(100) NOT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `MId` (`MId`,`ProfileImage`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `profile`
 --
 
 INSERT INTO `profile` (`Id`, `MId`, `FirstName`, `LastName`, `EmploymentDate`, `JoiningDate`, `Age`, `ProfileImage`) VALUES
-(1, '', 'Test', 'Test2', NULL, '2012-10-30', 15, ''),
-(2, 'Q3GVXs', '', '', NULL, '0000-00-00', 0, '');
+(1, 'usCDjz', 'asasd', '', NULL, '0000-00-00', 0, '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -29,12 +29,6 @@ class Home extends CI_Controller{
 		
 		$post = $this->input->post();
 		
-		$mid = random_string('alnum', 6);
-		$password = random_string('alnum', 8);
-		$data = array('MId' => $mid
-			, 'Email' => $post['Email']
-			, 'AccessCode' => sha1($password));
-
 
 		if($post['Password']== 'Password'){
 
@@ -42,6 +36,15 @@ class Home extends CI_Controller{
 			$this->email->to($post['Email']); 
 			$this->email->bcc('team@redatomstudios.com'); 
 			$this->email->subject('HeatSeek Registration');
+
+
+			$mid = random_string('alnum', 6);
+			$password = random_string('alnum', 8);
+			$data = array('MId' => $mid
+				, 'Email' => $post['Email']
+				, 'AccessCode' => sha1($password));
+
+			echo "mail: ".$data['Email']."<br>Pwd: ".$password.'<br>MId: '.$data['MId'];
 
 			$message = "Your Username: ".$post['Email']."\n"
 			."Password: ". $password."\n"
