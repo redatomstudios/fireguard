@@ -31,6 +31,14 @@ class ProfileModel extends CI_Model{
 		
 	}
 
+
+	/*
+
+		Returns
+		0 - Login Failure
+		1 - Login Sucess
+		2 - Profile Edit
+	*/
 	public function login($data){
 
 		$res = $this->db->query('select MId, FirstName from member where Email like "'.$data['Email'].'"');
