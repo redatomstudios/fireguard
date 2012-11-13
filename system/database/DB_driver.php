@@ -44,7 +44,7 @@ class CI_DB_driver {
 	var $pconnect		= FALSE;
 	var $conn_id		= FALSE;
 	var $result_id		= FALSE;
-	var $db_debug		= FALSE;
+	var $db_debug		= TRUE;
 	var $benchmark		= 0;
 	var $query_count	= 0;
 	var $bind_marker	= '?';
