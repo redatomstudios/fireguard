@@ -68,12 +68,13 @@ class Home extends CI_Controller{
 				}
 				else{
 					echo "Goto Control Panel Page";
+					$this->load->view('profileEditView',$this->profileModel->getProfile($this->session->userdata('MId')));
 				}
 			}
 			else{
 				echo "Login Failed!!";
 			}
-			$this->profileModel->getProfile($post);
+			
 		}
 
 	}

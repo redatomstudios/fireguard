@@ -17,7 +17,7 @@ class ProfileModel extends CI_Model{
 		$r = $this->db->insert('member',$memberTable);
 		if(!$r){
 
-		echo "Error Number: ".$this->db->_error_number();
+		//echo "Error Number: ".$this->db->_error_number();
 		if($this->db->_error_number() == 1062)
 			echo "You have already registered!!!";
 		}
@@ -27,11 +27,30 @@ class ProfileModel extends CI_Model{
 	}
 	//test
 
-	public function getProfile($data){
+	public function getProfile($MId){
 	
-		//$this->login($data);
+		$data = array();
+		echo 'select FirstName, LastName, EmploymentDate, JoiningDate, Age from profile where MId = "'.$MId.'"';
+		$res = $this->db->query('select FirstName, LastName, EmploymentDate, JoiningDate, Age from profile where MId = "'.$MId.'"');
+		if($res->num_rows() >0){
 			
-		
+			
+			$r = $res->row();
+			$data['FirstName'] = $r->FirstName;
+			$data['LastName'] = $r->LastName;
+			$data['EmploymentDate'] = $r->EmploymentDate;
+			$data['EmploymentDate'] = $r->JoiningDate;
+			$data['Age'] = $r->Age;
+		}
+		$res = $this->db->query('select PhoneNumber from member where MId = "'.$MId.'"');
+		if($res->num_rows() >0){
+			
+			
+			$r = $res->row();
+			$data['Phone'] = $r->PhoneNumber;
+		}
+			
+		return $data;
 		
 	}
 	
@@ -41,13 +60,7 @@ class ProfileModel extends CI_Model{
 	}
 
 
-	/*
-
-		Returns
-		0 - Login Failure
-		1 - Login Sucess
-		2 - Profile Edit
-	*/
+	
 	public function login($data){
 
 		$res = $this->db->query('select MId from member where Email like "'.$data['Email'].'"');
