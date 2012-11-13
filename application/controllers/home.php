@@ -61,7 +61,18 @@ class Home extends CI_Controller{
 
 		}
 		else{
-			
+			if($this->profileModel->login($post)==1){
+				echo "Login Success!!";
+				if($this->profileModel->isEmptyProfile($this->session->userdata('MId'))){
+					$this->load->view('profileEditView');
+				}
+				else{
+					echo "Goto Control Panel Page";
+				}
+			}
+			else{
+				echo "Login Failed!!";
+			}
 			$this->profileModel->getProfile($post);
 		}
 

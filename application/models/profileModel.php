@@ -20,7 +20,7 @@ class ProfileModel extends CI_Model{
 
 	public function getProfile($data){
 	
-		$this->login($data);
+		//$this->login($data);
 			
 		
 		
@@ -41,33 +41,33 @@ class ProfileModel extends CI_Model{
 	*/
 	public function login($data){
 
-		$res = $this->db->query('select MId, FirstName from member where Email like "'.$data['Email'].'"');
+		$res = $this->db->query('select MId from member where Email like "'.$data['Email'].'"');
 		if($res->num_rows()>0){
-			echo "Email present<br>";
-			$FirstName = $res->row()->FirstName;
 			
-			
-			$res = $this->db->query('select count(AccessCode) as C from opensesame where AccessCode like "'.sha1($data['Password']).'" AND MId like "'.$res->row()->MId.'"');
-			if($res->row()->C > 0){
-				echo "Login Success!!";
-				if($FirstName == NULL)
-					echo "Profile Edit";
-				else
-					echo "Home page";
+			$res1 = $this->db->query('select count(AccessCode) as C from opensesame where AccessCode like "'.sha1($data['Password']).'" AND MId like "'.$res->row()->MId.'"');
+			if($res1->row()->C > 0){
+				//echo "Login Success!!";
+				$ses= array('MId' => $res->row()->MId,'Email' => $data['Email']);
+				$this->session->set_userdata($ses);
+				return 1;
 			}			
 			else {
-				echo "Login Failure!!";
+				//echo "Login Failure!!";
+				return 0;
 			}
+		}
+	}
 
 
-
-
-
-
-
-
-
-
+	public function isEmptyProfile($MId){
+		//$this->db->select('MId');
+		//$query = $this->db->get_where('profile', array('MId' => $MId, 'FirstName' => NULL)) ;
+		$query = $this->db->query('select * from profile where MId like "'.$MId.'" AND FirstName like ""');
+		if($query->num_rows() >0){
+			return true;
+		}
+		else{
+			return false;
 		}
 	}
 }
