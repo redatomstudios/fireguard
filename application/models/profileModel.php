@@ -12,9 +12,18 @@ class ProfileModel extends CI_Model{
 
 
 		$profTable['JoiningDate'] = date("Y-m-d");
-		$this->db->insert('profile',$profTable);
-		$this->db->insert('opensesame',$opensesameTable);
-		$this->db->insert('member',$memberTable);
+
+		
+		$r = $this->db->insert('member',$memberTable);
+		if(!$r){
+
+		echo "Error Number: ".$this->db->_error_number();
+		if($this->db->_error_number() == 1062)
+			echo "You have already registered!!!";
+		}
+		//$this->db->insert('profile',$profTable);
+		//$this->db->insert('opensesame',$opensesameTable);
+		
 	}
 	//test
 
