@@ -172,7 +172,8 @@ div#notifier {
 	line-height: 2em;
 	text-align: center;
 	font-size: 1em;
-	text-shadow: 0 1px 1px #FFF;
+	color: #FFF;
+	text-shadow: 0 1px 1px #000;
 }
 
 div.notification, div.alert {

@@ -1,10 +1,26 @@
 /* Javascript Document */
 /* Created by redAtom Studios @ 2012 */
 
+var alert_id = 0;
+var notify_delay = 3000;
+var emailRegex = /\S+@\S+\.\S+/;
+
+var openNotification = function(message, type) {
+	console.log(message);
+	if(message) {
+		$('div#notifier').append('<div id="m'+alert_id+'" class="'+(type ? 'notification' : 'alert')+'">'+message+'</div>')
+		var this_id = '#m' + alert_id++;
+		$(this_id).animate({height: 2+'em'}, function(){
+			setTimeout(function(){
+				$(this_id).queue('fx', []).animate({height: 0}, function(){
+					$(this).hide().remove();
+				});
+			}, notify_delay);
+		});
+	}
+}
+
 jQuery(document).ready(function($){
-	var alert_id = 0;
-	var notify_delay = 3000;
-	var emailRegex = /\S+@\S+\.\S+/;
 
 	if(document.getElementById('email').value != 'Email') {
 		document.getElementById('email').value = 'Email';
@@ -66,20 +82,4 @@ jQuery(document).ready(function($){
 
 	// Notification scriptlet?!?! Sets up the notifier on each page and handles notifications...like a boss. :D
 	$('body').append('<div id="notifier"></div>')
-
-	var openNotification = function(message, type) {
-		if(message) {
-			$('div#notifier').append('<div id="m'+alert_id+'" class="'+(type ? 'notification' : 'alert')+'">'+message+'</div>')
-			var this_id = '#m' + alert_id++;
-			$(this_id).animate({height: 2+'em'}, function(){
-				setTimeout(function(){
-					$(this_id).queue('fx', []).animate({height: 0}, function(){
-						$(this).hide().remove();
-					});
-				}, notify_delay);
-			});
-		}
-	}
-
-	openNotification();
 });
