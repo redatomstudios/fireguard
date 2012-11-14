@@ -13,10 +13,10 @@
 			foreach($notifications as $message) {
 				$message = explode('|', $message);
 				echo 'stackNotify("'.$message[0].'", '.(sizeof($message) == 2 ? $message[1] : 0).');
-';
+'; // Populate the message stack
 			}
 		?>
-		openNotification();
+		openNotification(); // Fire notification system, and BOOM!
 		});
 		</script>
 		<?php } ?>
