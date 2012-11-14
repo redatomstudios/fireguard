@@ -3,12 +3,15 @@
 
 var alert_id = 0;
 var notify_delay = 3000;
+var notifyStack = [];
 var emailRegex = /\S+@\S+\.\S+/;
 
-var openNotification = function(message, type) {
-	console.log(message);
-	if(message) {
-		$('div#notifier').append('<div id="m'+alert_id+'" class="'+(type ? 'notification' : 'alert')+'">'+message+'</div>')
+var openNotification = function() {
+	if(notifyStack.length > 0) {
+		var thisMessage = notifyStack.pop();
+		thisMessage = thisMessage.split('|')[0];
+		var thisType = thisMessage.split('|')[1];
+		$('div#notifier').append('<div id="m'+alert_id+'" class="'+(thisType ? 'notification' : 'alert')+'">'+thisMessage+'</div>')
 		var this_id = '#m' + alert_id++;
 		$(this_id).animate({height: 2+'em'}, function(){
 			setTimeout(function(){
@@ -18,6 +21,10 @@ var openNotification = function(message, type) {
 			}, notify_delay);
 		});
 	}
+}
+
+var stackNotify = function(message, type) {
+	notifyStack.push(message + '|' + type);
 }
 
 jQuery(document).ready(function($){
