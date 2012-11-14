@@ -11,10 +11,12 @@
 		<?php 
 			$notifications = explode(';', $_GET['n']);
 			foreach($notifications as $message) {
-				echo 'openNotification("'.$message.'", 0);
+				$message = explode('|', $message);
+				echo 'stackNotify("'.$message[0].'", '.(sizeof($message) == 2 ? $message[1] : 0).');
 ';
 			}
 		?>
+		openNotification();
 		});
 		</script>
 		<?php } ?>

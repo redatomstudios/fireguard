@@ -4,19 +4,28 @@
 var alert_id = 0;
 var notify_delay = 3000;
 var notifyStack = [];
+var liveNotifications = 0;
+var maxParallelNotify = 3;
 var emailRegex = /\S+@\S+\.\S+/;
 
 var openNotification = function() {
 	if(notifyStack.length > 0) {
 		var thisMessage = notifyStack.pop();
-		thisMessage = thisMessage.split('|')[0];
 		var thisType = thisMessage.split('|')[1];
-		$('div#notifier').append('<div id="m'+alert_id+'" class="'+(thisType ? 'notification' : 'alert')+'">'+thisMessage+'</div>')
+		thisMessage = thisMessage.split('|')[0];
+		$('div#notifier').append('<div id="m'+alert_id+'" class="'+(thisType == '1' ? 'notification' : 'alert')+'">'+thisMessage+'</div>')
 		var this_id = '#m' + alert_id++;
 		$(this_id).animate({height: 2+'em'}, function(){
+			liveNotifications++;
+			if(liveNotifications < maxParallelNotify) {
+				openNotification();
+			}
 			setTimeout(function(){
 				$(this_id).queue('fx', []).animate({height: 0}, function(){
 					$(this).hide().remove();
+					if(liveNotifications == maxParallelNotify)
+						openNotification();
+					liveNotifications--;
 				});
 			}, notify_delay);
 		});
