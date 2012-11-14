@@ -6,7 +6,6 @@ class Home extends CI_Controller{
 	
 		parent::__construct();
 		$this->load->helper('form');
-		$this->load->library('javascript');
 		$this->load->helper('html');
 		$this->load->helper('url');
 		
