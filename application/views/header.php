@@ -8,6 +8,9 @@
 		<?php if(isset($_GET['n'])) { ?>
 		<script>
 		jQuery(document).ready(function($){
+			// NOTIFICATIONS: format is MESSAGE|TYPE
+			// USE ; TO DELIMIT MULTIPLE MESSAGE. I.E.:
+			// MESSAGE1|TYPE;MESSAGE2|TYPE;etc.
 		<?php 
 			$notifications = explode(';', $_GET['n']);
 			foreach($notifications as $message) {
