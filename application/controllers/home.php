@@ -66,49 +66,17 @@ class Home extends CI_Controller{
 					$this->load->view('profileEditView');
 				}
 				else{
-					echo "Goto Control Panel Page";
+					//echo "Goto Control Panel Page";
 					$this->load->view('profileEditView',$this->profileModel->getProfile($this->session->userdata('MId')));
 				}
 			}
 			else{
-				echo "Login Failed!!";
+				redirect('/home?n='.urlencode('Login Failed').'|0');
 			}
 			
 		}
-
 	}
 	
-	// public function register(){
-			
-	// 	$this->load->helper("form");
-	// 	$this->load->view("header");
-	// 	$this->load->view("signupView");
-	// 	$this->load->view("footer");
-			
-	// }
-	
-	// public function signup(){
-		
-	// 	$this->load->model("userModel");
-	// 	$this->load->helper('string');
-		
-	// 	$post = $this->input->post();
-		
-	// 	$data = array('FirstName' => $post['FirstName'],
-	// 				 'LastName' => $post['LastName'],
-	// 				  'Username' => $post['UserName'],
-	// 				  'Age' => $post['Age'],
-	// 				  'EmploymentDate' => $post['EmploymentDate'],
-	// 				  'PhoneNumber' => $post['Phone'],
-	// 				  'Password' => $post['Password']
-	// 				  );
-		
-		
-	// 	$this->userModel->createUser($data);
-		
-	// }
-
-
 	
 }
 

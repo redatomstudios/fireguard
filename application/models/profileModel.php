@@ -30,7 +30,7 @@ class ProfileModel extends CI_Model{
 	public function getProfile($MId){
 	
 		$data = array();
-		echo 'select FirstName, LastName, EmploymentDate, JoiningDate, Age from profile where MId = "'.$MId.'"';
+		//echo 'select FirstName, LastName, EmploymentDate, JoiningDate, Age from profile where MId = "'.$MId.'"';
 		$res = $this->db->query('select FirstName, LastName, EmploymentDate, JoiningDate, Age from profile where MId = "'.$MId.'"');
 		if($res->num_rows() >0){
 			
