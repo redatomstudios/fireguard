@@ -9,7 +9,7 @@ var maxParallelNotify = 2;
 var emailRegex = /\S+@\S+\.\S+/;
 
 var openNotification = function() {
-	if(notifyStack.length > 0) {
+	if(notifyStack.length > 0 && liveNotifications <= maxParallelNotify) {
 		var thisMessage = notifyStack.shift(); // Get the latest message
 		var thisType = thisMessage.split('|')[1]; // Separate the message type and message
 		thisMessage = thisMessage.split('|')[0];
@@ -91,8 +91,9 @@ jQuery(document).ready(function($){
 			this.submit();
 		} else {
 			$.each(errorMessages, function(index, value){
-				openNotification(value[0], value[1]);
-			})
+				stackNotify(value[0], value[1]);
+			});
+			openNotification();
 		}
 	});
 
