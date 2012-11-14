@@ -8,7 +8,7 @@
 			<div class="button accept" id="signup">Sign Up</div>
 			<div class="button accept" id="login">Login</div>
 		</div>
-		<div class="dialog centered" id="inputs">
+		<div class="dialog centered" id="inputs" style="margin-top: 20px;">
 			<?php echo form_open('home/login', array('id' => 'access')) ?>
 				<?php echo form_input(array('id' => "email", 'name' => "Email", 'value' => "Email")) ?>
 				<?php echo form_password(array('id' => "password", 'name' => "Password", 'value' => "Password")) ?>
