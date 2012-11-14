@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2012 at 09:02 AM
+-- Generation Time: Nov 14, 2012 at 06:44 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `MId` varchar(10) NOT NULL,
   `FirstName` varchar(50) NOT NULL,
   `LastName` varchar(50) NOT NULL,
-  `PhoneNumber` int(12) NOT NULL,
+  `PhoneNumber` bigint(20) NOT NULL,
   `Email` varchar(100) NOT NULL,
   `Type` enum('Station','Squad','Member','Default') NOT NULL DEFAULT 'Default',
   PRIMARY KEY (`Id`),
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `member` (
 --
 
 INSERT INTO `member` (`Id`, `MId`, `FirstName`, `LastName`, `PhoneNumber`, `Email`, `Type`) VALUES
-(1, 'usCDjz', '', '', 0, 'albin@gmail.com', 'Default');
+(1, 'usCDjz', 'Albin', 'George', 9620732469, 'albin@gmail.com', 'Default');
 
 -- --------------------------------------------------------
 
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `opensesame` (
 --
 
 INSERT INTO `opensesame` (`Id`, `MId`, `AccessCode`) VALUES
-(1, 'usCDjz', '6df89f6ca3ed1f5d174cede62dc0a95d9f653ef4');
+(1, 'usCDjz', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8');
 
 -- --------------------------------------------------------
 
@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `profile` (
 --
 
 INSERT INTO `profile` (`Id`, `MId`, `FirstName`, `LastName`, `EmploymentDate`, `JoiningDate`, `Age`, `ProfileImage`) VALUES
-(1, 'usCDjz', 'asasd', '', NULL, '0000-00-00', 0, '');
+(1, 'usCDjz', 'Albin', 'George', NULL, '0000-00-00', 59, '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
