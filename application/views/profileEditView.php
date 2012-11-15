@@ -1,3 +1,5 @@
+<div>
+
 <?php echo form_open("/home/profileEdit") ?>
 
 <p>Old Password: <input type="password" name="OldPassword" id="OldPassword" /></p>
@@ -19,3 +21,4 @@
 
 ?> 
 
+</div>

@@ -12,8 +12,18 @@ class Home extends CI_Controller{
 	}
 	
 	public function index(){
+		if($this->session->userdata('MId') != FALSE){
+			redirect('/dashboard');
+		}
 		$this->load->view("header");
 		$this->load->view("homeView"); 
+	}
+	
+	
+	public function logout(){
+		$this->session->sess_destroy();
+		//echo $this->session->userdata('MId');
+		redirect('/home');
 	}
 
 	public function login(){
@@ -61,19 +71,19 @@ class Home extends CI_Controller{
 		}
 		else{
 			if($this->profileModel->login($post)==1){
-				echo "Login Success!!";
+				
+				$this->load->view('header');
 				if($this->profileModel->isEmptyProfile($this->session->userdata('MId'))){
 					$this->load->view('profileEditView');
 				}
 				else{
-					//echo "Goto Control Panel Page";
-					$this->load->view('profileEditView',$this->profileModel->getProfile($this->session->userdata('MId')));
+					
+					redirect('/dashboard');
 				}
 			}
 			else{
 				redirect('/home?n='.urlencode('Login Failed').'|0');
 			}
-			
 		}
 	}
 	

@@ -1,0 +1,5 @@
+1. $this->load->view('header') NOT working. Its not loading.
+2. In header, add a logout button by checking if the value of session variable 'MId' is FALSE.
+	if($this->session->userdata('MId') == FALSE){
+	echo "BUTTON CODE HERE!!";
+	}
