@@ -11,6 +11,9 @@
 		<?= img(array('src' => 'Media/branding/standalone_light.png', 'width' => '140', 'style' => 'margin: 20px 0; clear: both;')) ?>
 		Click/Tap to open Navigation
 	</div>
+	<div id="logout">
+		<a href='<?php echo base_url() ?>home/logout'><input type='button' class='reject' value='Logout'/></a>
+	</div>
 	<div id="navTitle">
 		Dashboard
 	</div>

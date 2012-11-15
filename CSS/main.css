@@ -236,6 +236,18 @@ div#navWrap > nav {
 	overflow: hidden;
 }
 
+div#navWrap #navTitle {
+	line-height: 130px;
+	font-size: 3em;
+	font-weight: bold;
+	margin-left: 180px;
+}
+
+div#navWrap #logout {
+	line-height: 130px;
+	float: right;
+}
+
 footer {
 	color: rgba(0, 0, 0, 0.2);
 	font-size: 0.8em;
