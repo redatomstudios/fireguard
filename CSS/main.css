@@ -239,8 +239,9 @@ div#navWrap {
 div#navWrap > nav {
 	display: none;
 	overflow: hidden;
-	background: #FFF;
+	//background: #FFF;
 	border-bottom: solid 5px #600;
+	border-bottom-right-radius: 20px;
 	padding: 5px 20px;
 	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
 }
@@ -256,7 +257,7 @@ div#navWrap > nav li {
 }
 
 div#navWrap > nav li:hover {
-	background: #DDD;
+	background: rgba(0, 0, 0, 0.1);
 }
 
 div#navWrap > nav a {
