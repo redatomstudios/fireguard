@@ -24,3 +24,4 @@
 		</script>
 		<?php } ?>
 	<body>
+		<div id="bodyWrap">

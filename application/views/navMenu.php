@@ -8,6 +8,11 @@
 		</ul>
 	</nav>
 	<div id="navPulldown">
-
+		<?= img(array('src' => 'Media/branding/standalone_light.png', 'width' => '140', 'style' => 'margin: 20px 0; clear: both;')) ?>
+		Click/Tap to open Navigation
 	</div>
+	<div id="navTitle">
+		Dashboard
+	</div>
+<br class="clearFix" />
 </div>
