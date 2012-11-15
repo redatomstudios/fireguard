@@ -45,4 +45,7 @@ jQuery(document).ready(function($){
 	$('body').append('<div id="diagConsole" style="position: absolute; top: 0; left: 0;"></div>');
 	$('#diagConsole').append('<div id="screenSize"></div>')
 	$('div#screenSize').html($(window).width() + 'x' + $(window).height());
+	$(window).resize(function(){
+		$('div#screenSize').html($(window).width() + 'x' + $(window).height());
+	});
 });

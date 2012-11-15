@@ -1,5 +1,5 @@
 <div id="splash" class="centered centerText">
-	<?php echo  img(array('src' => "Media/Branding/Logo.png", 'id' => "splashLogo", 'alt' => "Heatmap Personnel Management System")) ?>
+	<?php echo  img(array('src' => "Media/Branding/Logo.png", 'id' => "splashLogo", 'alt' => "Heatmap Personnel Management System", 'style' => 'max-width: 100%; min-width: 300px;')) ?>
 	<div class="overlayText" style="margin: 20px;">
 		Service is free while in beta, so what're you waiting for? <br />
 		Join in before the slots are filled!
