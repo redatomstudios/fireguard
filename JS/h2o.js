@@ -8,6 +8,8 @@ var liveNotifications = 0;
 var maxParallelNotify = 2;
 var emailRegex = /\S+@\S+\.\S+/;
 
+
+// Notification functions
 var openNotification = function() {
 	if(notifyStack.length > 0 && liveNotifications <= maxParallelNotify) {
 		var thisMessage = notifyStack.shift(); // Get the latest message
@@ -36,6 +38,11 @@ var stackNotify = function(message, type) {
 	notifyStack.push(message + '|' + type);
 }
 
+// Navigation functions
+var toggleNav = function(){
+	$('#navWrap > nav').queue('fx', []).slideToggle(100);
+}
+
 jQuery(document).ready(function($){
 
 	// Notification scriptlet?!?! Sets up the notifier on each page and handles notifications...like a boss. :D
@@ -47,5 +54,11 @@ jQuery(document).ready(function($){
 	$('div#screenSize').html($(window).width() + 'x' + $(window).height());
 	$(window).resize(function(){
 		$('div#screenSize').html($(window).width() + 'x' + $(window).height());
+	});
+	// End Diagnostic Code
+
+	// Navigation Code
+	$('div#navPulldown').click(function(){
+		toggleNav();
 	});
 });

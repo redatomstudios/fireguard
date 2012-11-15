@@ -5,7 +5,15 @@
 			<li><?php echo anchor('', 'Profile', 'title = "View & Edit Your Profile"') ?></li>
 			<li><?php echo anchor('', 'Planner', 'title = "Monthly, Daily and Hourly Planner"') ?></li>
 			<li><?php echo anchor('', 'Settings', 'title = "Account Settings"') ?></li>
+			<li><?php echo anchor('', 'Home', 'title = "Heatseek Overview"') ?></li>
+			<li><?php echo anchor('', 'Profile', 'title = "View & Edit Your Profile"') ?></li>
+			<li><?php echo anchor('', 'Planner', 'title = "Monthly, Daily and Hourly Planner"') ?></li>
+			<li><?php echo anchor('', 'Settings', 'title = "Account Settings"') ?></li>
+			<li><?php echo anchor('', 'Home', 'title = "Heatseek Overview"') ?></li>
+			<li><?php echo anchor('', 'Profile', 'title = "View & Edit Your Profile"') ?></li>
+			<li><?php echo anchor('', 'Planner', 'title = "Monthly, Daily and Hourly Planner"') ?></li>
 		</ul>
+		<br class="clearFix" />
 	</nav>
 	<div id="navPulldown">
 		<?= img(array('src' => 'Media/branding/standalone_light.png', 'width' => '140', 'style' => 'margin: 20px 0;')) ?>

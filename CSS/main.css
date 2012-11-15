@@ -219,6 +219,7 @@ div.notification:hover, div.alert:hover {
 div#navPulldown {
 	width: 200px;
 	height: 130px;
+	margin-top: -1px;
 	margin-right: 20px;
 	background: #600;
 	clear: left;
@@ -228,7 +229,7 @@ div#navPulldown {
 	font-weight: bold;
 	color: #FFF;
 	text-shadow: 0 1px 1px #000;
-	box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 div#navWrap {
@@ -236,8 +237,32 @@ div#navWrap {
 }
 
 div#navWrap > nav {
-	height: 0;
+	display: none;
 	overflow: hidden;
+	background: #FFF;
+	border-bottom: solid 5px #600;
+	padding: 5px 20px;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+div#navWrap > nav li {
+	float: left;
+	padding: 10px;
+	min-width: 110px;
+	text-align: center;
+	font-weight: bold;
+	color: #000;
+	cursor: pointer;
+}
+
+div#navWrap > nav li:hover {
+	background: #DDD;
+}
+
+div#navWrap > nav a {
+	color: inherit;
+	text-decoration: none;
+	display: block;
 }
 
 div#navWrap #navTitle {
