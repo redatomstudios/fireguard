@@ -1,3 +1,8 @@
+<style>
+body {
+	background: url('Media/Graphics/BG_Gradient.png') center top no-repeat;
+}
+</style>
 <div id="splash" class="centered centerText">
 	<?php echo  img(array('src' => "Media/Branding/Logo.png", 'id' => "splashLogo", 'alt' => "Heatmap Personnel Management System", 'style' => 'max-width: 100%; min-width: 300px;')) ?>
 	<div class="overlayText" style="margin: 20px;">
