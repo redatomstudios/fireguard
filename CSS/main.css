@@ -166,6 +166,10 @@ input[type="submit"], input[type="button"] {
 	border-radius: 5px;
 }
 
+input[type="submit"]:not(.reject), input[type="button"]:not(.reject) {
+	background: url('../Media/Graphics/Button_Green.jpg') center center repeat-x;
+}
+
 input[type="submit"]:hover, input[type="button"]:hover {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
