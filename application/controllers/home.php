@@ -75,7 +75,7 @@ class Home extends CI_Controller{
 				
 				$this->load->view('header');
 				if($this->profileModel->isEmptyProfile($this->session->userdata('MId'))){
-					$this->load->view('profileEditView');
+					redirect('/home/updateProfile');
 				}
 				else{
 					
@@ -88,6 +88,33 @@ class Home extends CI_Controller{
 		}
 	}
 	
+	public function updateProfile(){
+
+		
+
+		if($post = $this->input->post()){
+
+			$this->load->model('profileModel');
+			$data = array();
+			$data['MId'] = $this->session->userdata('MId');
+			$data['FirstName'] = $post['FirstName'];
+			$data['LastName'] = $post['LastName'];
+			$data['AccessCode'] = $post['NewPassword'];
+			$data['EmploymentDate'] = $post['EmploymentDate'];
+			$data['Age'] = $post['Age'];
+			$data['PhoneNumber'] = $post['Phone'];
+
+			$this->profileModel->updateProfile($data);
+
+			redirect('/dashboard?n='.urlencode('Profile Updated!').'|1');
+		}
+
+		else{
+			$this->load->view('header');
+			$this->load->view('profileEditView');
+			$this->load->view('footer');
+		}
+	}
 	
 }
 

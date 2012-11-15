@@ -21,9 +21,11 @@ class ProfileModel extends CI_Model{
 		if($this->db->_error_number() == 1062)
 			echo "You have already registered!!!";
 		}
-		//$this->db->insert('profile',$profTable);
-		//$this->db->insert('opensesame',$opensesameTable);
-		
+		else{
+			
+			$this->db->insert('profile',$profTable);
+			$this->db->insert('opensesame',$opensesameTable);
+		}
 	}
 	//test
 
@@ -55,7 +57,22 @@ class ProfileModel extends CI_Model{
 	}
 	
 	public function updateProfile($data){
+		
+		$opensesameTable['AccessCode'] = sha1($data['AccessCode']);
 
+		unset($data['AccessCode']);
+		$profileTable = $memberTable = $data;
+
+		
+		unset($profileTable['PhoneNumber'], $profileTable['MId']);
+		unset($memberTable['EmploymentDate'], $memberTable['Age'], $memberTable['MId']);
+
+		$this->db->where('MId', $data['MId']);
+		$this->db->update('profile', $profileTable);
+		$this->db->update('member', $memberTable);
+		$this->db->update('opensesame', $opensesameTable);
+
+		$this->db->flush_cache();
 		
 	}
 

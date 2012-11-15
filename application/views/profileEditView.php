@@ -1,6 +1,6 @@
 <div>
 
-<?php echo form_open("/home/profileEdit") ?>
+<?php echo form_open("/home/updateProfile") ?>
 
 <p>Old Password: <input type="password" name="OldPassword" id="OldPassword" /></p>
 <p>New Password: <input type="password" name="NewPassword" id="NewPassword" /></p>
@@ -17,8 +17,8 @@
 
 
 <p> <input type="submit" value="Submit" /></p>
-<?php form_close();
-
-?> 
+<?php form_close();?> 
 
 </div>
+</body>
+</html>
