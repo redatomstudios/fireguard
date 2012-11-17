@@ -116,6 +116,11 @@ class Home extends CI_Controller{
 		}
 	}
 	
+
+	public function viewProfile(){
+
+		$MId = $this->session->userdate('MId');
+	}
 }
 
 ?>
