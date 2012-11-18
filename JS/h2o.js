@@ -44,7 +44,6 @@ var toggleNav = function(){
 }
 
 jQuery(document).ready(function($){
-
 	// Notification scriptlet?!?! Sets up the notifier on each page and handles notifications...like a boss. :D
 	$('body').append('<div id="notifier"></div>');
 
@@ -52,4 +51,23 @@ jQuery(document).ready(function($){
 	$('div#navPulldown').click(function(){
 		toggleNav();
 	});
+
+	// Form Hinting Scriptlet || Uses the data-hint attribute 
+	$.each($('input[type="text"], input[type="password"]'), function(){
+		this.value = this.attributes['data-hint'].value;
+		this.style.color = "rgba(0, 0, 0, 0.3)";
+	});
+
+	$('input[type="text"], input[type="password"]').focus(function(){
+		if(this.value == this.attributes['data-hint'].value) {
+			this.value = "";
+			this.style.color = "#000";
+		}
+	}).blur(function(){
+		if(this.value == '') {
+			this.value = this.attributes['data-hint'].value;
+			this.style.color = "rgba(0, 0, 0, 0.3)";
+		}
+	});
+
 });

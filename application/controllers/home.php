@@ -44,7 +44,7 @@ class Home extends CI_Controller{
 		$post = $this->input->post();
 		
 
-		if($post['Password']== 'Password'){
+		if($post['type'] == 's'){
 
 			$this->email->from('team@redatomstudios.com', 'redAtom Support');
 			$this->email->to($post['Email']); 
@@ -73,20 +73,17 @@ class Home extends CI_Controller{
 			echo "You have successfully registered!!\n Please check your mail for your password";
 
 
-		}
-		else{
+		} else {
 			if($this->profileModel->login($post)==1){
 				
 				$this->load->view('header');
 				if($this->profileModel->isEmptyProfile($this->session->userdata('MId'))){
 					redirect('/home/updateProfile');
-				}
-				else{
+				} else {
 					
 					redirect('/dashboard');
 				}
-			}
-			else{
+			} else {
 				redirect('/home?n='.urlencode('Login Failed').'|0');
 			}
 		}

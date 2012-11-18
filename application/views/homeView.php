@@ -17,8 +17,8 @@ body {
 		</div>
 		<div class="dialog centered" id="inputs" style="margin-top: 20px;">
 			<?php echo form_open('home/login', array('id' => 'access')) ?>
-				<?php echo form_input(array('id' => "email", 'name' => "Email", 'value' => "Email", 'data-hint' => "E-mail")) ?>
-				<?php echo form_password(array('id' => "password", 'name' => "Password", 'value' => "********", 'data-hint' => "********")) ?>
+				<?php echo form_input(array('id' => "email", 'name' => "Email", 'data-hint' => "E-mail")) ?>
+				<?php echo form_password(array('id' => "password", 'name' => "Password", 'data-hint' => "********")) ?>
 				<input type="hidden" name="type" id="submitType" value="s"/>
 				<div class="buttonSet">
 					<input type="submit" value="Sign Up" id="submitButton" class="accept"/>
@@ -32,24 +32,24 @@ body {
 <script>
 jQuery(document).ready(function(){
 	
-	if(document.getElementById('email'))
-		if(document.getElementById('email').value != 'Email') {
-			document.getElementById('email').value = 'Email';
-		}
+	// if(document.getElementById('email'))
+	// 	if(document.getElementById('email').value != 'Email') {
+	// 		document.getElementById('email').value = 'Email';
+	// 	}
 
-	$('input[type="text"], input[type="password"]').focus(function(){
-		var cElement = $(this)[0];
-		if(cElement.value.toLowerCase() == "email" || cElement.value.toLowerCase() == "password") {
-			cElement.value = '';
-			cElement.style.color = "#000";
-		}
-	}).blur(function(){
-		var cElement = $(this)[0];
-		if(cElement.value == "") {
-			cElement.value = cElement.name;
-			cElement.style.color = "rgba(0, 0, 0, 0.3)";
-		}
-	});
+	// $('input[type="text"], input[type="password"]').focus(function(){
+	// 	var cElement = $(this)[0];
+	// 	if(cElement.value.toLowerCase() == "email" || cElement.value.toLowerCase() == "password") {
+	// 		cElement.value = '';
+	// 		cElement.style.color = "#000";
+	// 	}
+	// }).blur(function(){
+	// 	var cElement = $(this)[0];
+	// 	if(cElement.value == "") {
+	// 		cElement.value = cElement.name;
+	// 		cElement.style.color = "rgba(0, 0, 0, 0.3)";
+	// 	}
+	// });
 
 	$('div#signup').click(function(){
 		$('#splashButtons').hide();
@@ -79,7 +79,7 @@ jQuery(document).ready(function(){
 			errorMessages.push(['Please enter a valid email address.', 0]);
 		}
 		if(document.getElementById('submitType').value == 'l') {
-			if(document.getElementById('password').value.length <= 5)
+			if(document.getElementById('password').value.length <= 6)
 				errorMessages.push(['Password is too short.', 0]);
 		}
 		if(errorMessages.length == 0) {
