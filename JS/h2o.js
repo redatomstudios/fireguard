@@ -51,11 +51,11 @@ jQuery(document).ready(function($){
 	// Diagnostic Code
 	$('body').append('<div id="diagConsole" style="position: absolute; top: 0; left: 0;"></div>');
 	$('#diagConsole').append('<div id="screenSize"></div><div id="userAgent"></div>');
-	$('div#userAgent').html(navigator.userAgent);
-	$('div#screenSize').html($(window).width() + 'x' + $(window).height());
-	$(window).resize(function(){
-		$('div#screenSize').html($(window).width() + 'x' + $(window).height());
-	});
+	// $('div#userAgent').html(navigator.userAgent);
+	// $('div#screenSize').html($(window).width() + 'x' + $(window).height());
+	// $(window).resize(function(){
+	// 	$('div#screenSize').html($(window).width() + 'x' + $(window).height());
+	// });
 	// End Diagnostic Code
 
 	// Navigation Code

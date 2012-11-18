@@ -1,11 +1,12 @@
 <div>
 
 <?php echo form_open("/home/updateProfile") ?>
-
-<p>Old Password: <input type="password" name="OldPassword" id="OldPassword" /></p>
-<p>New Password: <input type="password" name="NewPassword" id="NewPassword" /></p>
+<fieldset>
+	<legend>Change Your Password</legend>
+<p>Old Password: <input type="password" data-hint = "OldPassword" name="OldPassword" id="OldPassword" /></p>
+<p>New Password: <input type="password" data-hint = "NewPassword" name="NewPassword" id="NewPassword" /></p>
 <p>Confirm Password: <input type="password" name="ConfirmPassword" id="ConfirmPassword" /></p>
-
+</fieldset>
 <p>First Name: <input type="text" name="FirstName" id="FirstName" value="<?php if(isset($FirstName)) echo $FirstName; ?>"/></p>
 <p>Last Name: <input type="text" name="LastName" id="LastName" value="<?php if(isset($LastName)) echo $LastName; ?>"/></p>
 

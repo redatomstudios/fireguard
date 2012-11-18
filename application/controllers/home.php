@@ -111,6 +111,8 @@ class Home extends CI_Controller{
 
 		else{
 			$this->load->view('header');
+			$data['pageTitle'] = 'Edit Profile';
+			$this->load->view('navMenu', $data);
 			$this->load->view('profileEditView');
 			$this->load->view('footer');
 		}
