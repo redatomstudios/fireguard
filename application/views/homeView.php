@@ -79,7 +79,7 @@ jQuery(document).ready(function(){
 			errorMessages.push(['Please enter a valid email address.', 0]);
 		}
 		if(document.getElementById('submitType').value == 'l') {
-			if(document.getElementById('password').value.length <= 6)
+			if(document.getElementById('password').value.length <= 8)
 				errorMessages.push(['Password is too short.', 0]);
 		}
 		if(errorMessages.length == 0) {
