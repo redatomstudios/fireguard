@@ -12,8 +12,9 @@ class Dashboard extends CI_Controller{
 
 		
 		
-		 if($this->session->userdata('MId') == FALSE)
-	 		redirect('/home');
+		 // if($this->session->userdata('MId') == FALSE)
+	 	// 	redirect('/home');
+	 	// echo $this->session->userdata('MId');
 		
 	}
 	
