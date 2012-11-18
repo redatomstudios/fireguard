@@ -140,52 +140,7 @@ div#splash {
 	text-align: center;
 }
 
-.dialog input[type='text'], .dialog input[type='password'] {
-	height: 40px;
-	width: 220px;
-	padding-left: 15px;
-	padding-right: 15px;
-	border: solid 2px #FFF;
-	box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.6), 0 2px 3px rgba(0, 0, 0, 0.6);
-	border-radius: 5px;
-	margin: 15px;
-	font-size: 1.2em;
-	color: rgba(0, 0, 0, 0.3);
-	background: rgba(0, 0, 0, 0.05);
-}
-
-.buttonSet {
-	display: inline;
-}
-
-input[type="text"]:focus, 
-input[type="text"]:active,
-input[type="password"]:focus,
-input[type="password"]:active {
-	outline: none;
-	background: rgba(0, 0, 0, 0.2);
-}
-
-input[type="submit"], input[type="button"] {
-	border: none;
-	height: 40px;
-	width: 100px;
-	color: #FFF;
-	font-size: 1.2em;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-	cursor: pointer;
-	border-radius: 5px;
-	border: solid thin white;
-}
-
-input[type="submit"]:not(.reject), input[type="button"]:not(.reject) {
-	background: url('../Media/Graphics/Button_Green.jpg') center center repeat-x;
-}
-
-input[type="submit"]:hover, input[type="button"]:hover {
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
+/* Notification Styles */
 div#notifier {
 	position: fixed;
 	top: 0;
@@ -292,4 +247,97 @@ footer {
 
 footer:hover {
 	color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Form Styles */
+fieldset {
+	padding: 20px;
+	border: solid thin rgba(0, 0, 0, 0.2);
+	margin: 30px 0;
+}
+
+label {
+	font-size: 1.2em;
+	min-width: 200px;
+	display: inline-block;
+}
+
+legend {
+	font-size: 1.5em;
+}
+
+.dialog input[type='text'], .dialog input[type='password'] {
+	height: 40px;
+	width: 220px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border: solid 2px #FFF;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.6), 0 2px 3px rgba(0, 0, 0, 0.6);
+	border-radius: 5px;
+	margin: 15px;
+	font-size: 1.2em;
+	color: rgba(0, 0, 0, 0.3);
+	background: rgba(0, 0, 0, 0.05);
+}
+
+input[type='text'], input[type='password'] {
+	height: 30px;
+	width: 220px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border: solid 2px #FFF;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.6), 0 2px 3px rgba(0, 0, 0, 0.6);
+	border-radius: 5px;
+	margin: 15px;
+	font-size: 1.2em;
+	color: rgba(0, 0, 0, 0.3);
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.buttonSet {
+	display: inline;
+}
+
+input[type="text"]:focus, 
+input[type="text"]:active,
+input[type="password"]:focus,
+input[type="password"]:active {
+	outline: none;
+	background: rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"], input[type="button"] {
+	border: none;
+	height: 40px;
+	width: 100px;
+	color: #FFF;
+	font-size: 1.2em;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	border-radius: 5px;
+	border: solid thin white;
+}
+
+input[type="submit"]:not(.reject), input[type="button"]:not(.reject) {
+	background: url('../Media/Graphics/Button_Green.jpg') center center repeat-x;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Forms are usually thrown into tables...so lets style the tables properly. 
+Yeah, I know...tables are a pain in the butt, but we're using them to lay 
+out the forms in a TABULAR manner, so their usage is justified :P */
+
+table.form th {
+	padding-top: 40px;
+	text-align: left;
+	border-bottom: solid 2px rgba(0, 0, 0, 0.3);
+	font-size: 1.5em;
+}
+
+table.form label {
+	text-align: right;
 }
