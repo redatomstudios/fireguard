@@ -5,3 +5,23 @@ To Do:
 4. Profile Edit Verification -> Just check password and date format
 5. Profile Show Page.
 6. Couter Strike!!!!! :P  <== MOST IMPORTANT.
+
+Event
+	Id
+	Name
+	Desc
+	TypeId
+	Squad
+	CreateTime
+	EventTime
+	Duration
+
+Type
+	Id
+	Name
+	Desc
+
+AccType
+	Station
+	Squad
+	FireFighter

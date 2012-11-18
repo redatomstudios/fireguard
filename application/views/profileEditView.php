@@ -1,5 +1,3 @@
-<div>
-
 <?php echo form_open("/home/updateProfile") ?>
 <fieldset>
 	<legend>Change Your Password</legend>
@@ -19,7 +17,3 @@
 
 <p> <input type="submit" value="Submit" /></p>
 <?php form_close();?> 
-
-</div>
-</body>
-</html>
