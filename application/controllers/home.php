@@ -10,8 +10,8 @@ class Home extends CI_Controller{
 		$this->load->helper('url');
 		
 
-		 if($this->session->userdata('MId') == FALSE AND $this->uri->uri_string() != 'home')
-	 		redirect('/home');
+		 // if($this->session->userdata('MId') == FALSE AND $this->uri->uri_string() != 'home')
+	 	// 	redirect('/home');
 		
 	}
 	
