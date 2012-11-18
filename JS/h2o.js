@@ -26,7 +26,7 @@ var openNotification = function() {
 				$(this_id).queue('fx', []).animate({height: 0}, function(){
 					$(this).hide().remove();
 					if(liveNotifications == maxParallelNotify)
-						openNotification(); // Check stack and repeat when last message is fired
+						openNotification(); // When last message is fired, check stack and repeat if there are more messages.
 					liveNotifications--;
 				});
 			}, notify_delay);
