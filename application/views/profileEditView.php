@@ -16,4 +16,7 @@
 
 
 <p> <input type="submit" value="Submit" /></p>
+
 <?php form_close();?> 
+
+</div>
