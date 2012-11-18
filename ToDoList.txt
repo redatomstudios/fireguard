@@ -1,0 +1,7 @@
+To Do: 
+1. Give parameter to header view to set the title of each page.
+2. Diff between home and Dashboard.
+3. Nav menu front end.
+4. Profile Edit Verification -> Just check password and date format
+5. Profile Show Page.
+6. Couter Strike!!!!! :P  <== MOST IMPORTANT.
