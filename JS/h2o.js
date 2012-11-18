@@ -54,8 +54,10 @@ jQuery(document).ready(function($){
 
 	// Form Hinting Scriptlet || Uses the data-hint attribute 
 	$.each($('input[type="text"], input[type="password"]'), function(){
-		this.value = this.attributes['data-hint'].value;
-		this.style.color = "rgba(0, 0, 0, 0.3)";
+		if(this.attributes['data-hint']) {
+			this.value = this.attributes['data-hint'].value;
+			this.style.color = "rgba(0, 0, 0, 0.3)";
+		}
 	});
 
 	$('input[type="text"], input[type="password"]').focus(function(){
