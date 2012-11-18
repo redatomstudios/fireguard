@@ -49,8 +49,13 @@ jQuery(document).ready(function($){
 	$('body').append('<div id="notifier"></div>');
 
 	// Diagnostic Code
+<<<<<<< HEAD
 	$('body').append('<div id="diagConsole" style="position: absolute; top: 0; left: 0;"></div>');
 	$('#diagConsole').append('<div id="screenSize"></div><div id="userAgent"></div>');
+=======
+	// $('body').append('<div id="diagConsole" style="position: absolute; top: 0; left: 0;"></div>');
+	// $('#diagConsole').append('<div id="screenSize"></div><div id="userAgent"></div>');
+>>>>>>> 2421e65c18b75d4084c73faea5fa23a945762a7f
 	// $('div#userAgent').html(navigator.userAgent);
 	// $('div#screenSize').html($(window).width() + 'x' + $(window).height());
 	// $(window).resize(function(){
