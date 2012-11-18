@@ -17,7 +17,7 @@
 		<a href='<?php echo base_url() ?>home/logout'><input type='button' class='reject' value='Logout'/></a>
 	</div>
 	<div id="navTitle">
-		Dashboard
+		<?= $pageTitle ?>
 	</div>
 <br class="clearFix" />
 </div>

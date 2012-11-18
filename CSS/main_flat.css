@@ -99,30 +99,30 @@ div.button {
 	float: left;
 	margin: 10px 30px;
 	height: 2em;
-	line-height: 2em;
+	line-height: 2.1em;
 	min-width: 230px;
 	cursor: pointer;
 	/*opacity: 0.8;*/
-	color: #FFF;
-	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+	color: #000;
+	text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
 	box-shadow: none;
 	border-radius: 10px;
 	box-shadow: 0 1px 3px #000;
-	border: solid thin rgba(255, 255, 255, 0.5);
+	border: solid 5px rgba(255, 255, 255, 0.8);
+	background: rgba(0, 0, 0, 0.25);
 }
 
 div.button:hover {
-	/*opacity: 1;*/
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 1px 3px #000, inset 0 1px 3px #000;
 }
 
-.accept {
-	background: url('../Media/Graphics/Button_Green.jpg') center center repeat-x;
+/*.accept {
+	background: #2A2;
 }
 
 .reject {
-	background: url('../Media/Graphics/Button_Orange.jpg') center center repeat-x;	
-}
+	background: #D92;
+}*/
 
 div#splash {
 	padding-top: 100px;
@@ -154,10 +154,6 @@ div#splash {
 	background: rgba(0, 0, 0, 0.05);
 }
 
-.buttonSet {
-	display: inline;
-}
-
 input[type="text"]:focus, 
 input[type="text"]:active,
 input[type="password"]:focus,
@@ -170,17 +166,19 @@ input[type="submit"], input[type="button"] {
 	border: none;
 	height: 40px;
 	width: 100px;
-	color: #FFF;
 	font-size: 1.2em;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 	cursor: pointer;
 	border-radius: 5px;
-	border: solid thin white;
+	border: solid 2px #FFF;
+	text-shadow: 0 1px 0 #FFF;
+	background: rgba(0, 0, 0, 0.25);
+	margin: 5px;
 }
 
-input[type="submit"]:not(.reject), input[type="button"]:not(.reject) {
-	background: url('../Media/Graphics/Button_Green.jpg') center center repeat-x;
-}
+/*input[type="submit"]:not(.reject), input[type="button"]:not(.reject) {
+	background: #2A2;
+}*/
 
 input[type="submit"]:hover, input[type="button"]:hover {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
