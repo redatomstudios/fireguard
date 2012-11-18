@@ -41,7 +41,7 @@ class ProfileModel extends CI_Model{
 			$data['FirstName'] = $r->FirstName;
 			$data['LastName'] = $r->LastName;
 			$data['EmploymentDate'] = $r->EmploymentDate;
-			$data['EmploymentDate'] = $r->JoiningDate;
+			$data['JoiningDate'] = $r->JoiningDate;
 			$data['Age'] = $r->Age;
 		}
 		$res = $this->db->query('select PhoneNumber from member where MId = "'.$MId.'"');
@@ -109,6 +109,9 @@ class ProfileModel extends CI_Model{
 			return false;
 		}
 	}
+
+
+	
 }
 
 ?>

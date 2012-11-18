@@ -9,6 +9,10 @@ class Home extends CI_Controller{
 		$this->load->helper('html');
 		$this->load->helper('url');
 		
+
+		 if($this->session->userdata('MId') == FALSE AND $this->uri->uri_string() != 'home')
+	 		redirect('/home');
+		
 	}
 	
 	public function index(){
@@ -118,8 +122,16 @@ class Home extends CI_Controller{
 	
 
 	public function viewProfile(){
+		
+		
+		$MId = $this->session->userdata('MId');
 
-		$MId = $this->session->userdate('MId');
+		echo "</br> $MId";
+		$this->load->model('profileModel');
+		$data = $this->profileModel->getProfile($MId);
+		$data['editable'] = false;
+
+		$this->load->view("viewProfile",$data);
 	}
 }
 
