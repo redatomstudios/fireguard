@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2012 at 06:44 PM
+-- Generation Time: Nov 20, 2012 at 10:25 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -25,6 +25,37 @@ USE `fireguarddb`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `event`
+--
+
+CREATE TABLE IF NOT EXISTS `event` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(50) NOT NULL,
+  `Description` text NOT NULL,
+  `EventTypeId` int(11) NOT NULL,
+  `SquadId` varchar(10) NOT NULL,
+  `CreateTime` datetime NOT NULL,
+  `EventTime` datetime NOT NULL,
+  `Duration` int(10) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `eventtype`
+--
+
+CREATE TABLE IF NOT EXISTS `eventtype` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(50) NOT NULL,
+  `Description` text NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `member`
 --
 
@@ -33,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `MId` varchar(10) NOT NULL,
   `FirstName` varchar(50) NOT NULL,
   `LastName` varchar(50) NOT NULL,
-  `PhoneNumber` bigint(20) NOT NULL,
+  `PhoneNumber` int(12) NOT NULL,
   `Email` varchar(100) NOT NULL,
   `Type` enum('Station','Squad','Member','Default') NOT NULL DEFAULT 'Default',
   PRIMARY KEY (`Id`),
@@ -46,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `member` (
 --
 
 INSERT INTO `member` (`Id`, `MId`, `FirstName`, `LastName`, `PhoneNumber`, `Email`, `Type`) VALUES
-(1, 'usCDjz', 'Albin', 'George', 9620732469, 'albin@gmail.com', 'Default');
+(1, 'usCDjz', 'Albi', 'Geo', 123, 'albin@gmail.com', 'Default');
 
 -- --------------------------------------------------------
 
@@ -67,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `opensesame` (
 --
 
 INSERT INTO `opensesame` (`Id`, `MId`, `AccessCode`) VALUES
-(1, 'usCDjz', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8');
+(1, 'usCDjz', '334389048b872a533002b34d73f8c29fd09efc50');
 
 -- --------------------------------------------------------
 
@@ -93,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `profile` (
 --
 
 INSERT INTO `profile` (`Id`, `MId`, `FirstName`, `LastName`, `EmploymentDate`, `JoiningDate`, `Age`, `ProfileImage`) VALUES
-(1, 'usCDjz', 'Albin', 'George', NULL, '0000-00-00', 59, '');
+(1, 'usCDjz', 'Albi', 'Geo', '0000-00-00', '2012-11-15', 25, '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

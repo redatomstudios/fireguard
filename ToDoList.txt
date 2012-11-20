@@ -12,7 +12,7 @@ Event
 	Desc
 	TypeId
 	Squad
-	CreateTime
+	CreateTime  ==> Local time of US or time of the server <==> TIME Difference!!!
 	EventTime
 	Duration
 
